@@ -154,7 +154,7 @@ The main model. This mainly tells **payu** which driver to use. **payu** knows t
         - name: atmosphere
           model: um
           ncpus: 192
-          exe: /short/public/access-esm/payu/bin/coe/um_hg3.exe-20190412-pmip-r327
+          exe: /short/public/access-esm/payu/bin/coe/um_hg3.exe-20190717-pmip-mh-r335
           input:
             - /short/public/access-esm/payu/input/pre-industrial/atmosphere
 
