@@ -390,7 +390,7 @@
  L_BL=.TRUE.,
  L_HYDROLOGY=.TRUE.,
  L_SOIL_SAT_DOWN=.TRUE.,
- L_SCVARY=.false.,
+ L_SCVARY=.true.,
  L_VOLCTS=.true.,
  l_anthrop_heat_src=.FALSE.,
  L_ICOUNT=.FALSE.,
@@ -907,7 +907,7 @@
  /
 
  &FILENATFORCE
- FILE_SCVARY  = '',
+ FILE_SCVARY  = 'TSI_PMIP',
  FILE_VOLCTS  = 'INPUT/volcts_18502000ave.dat'
  /
 
