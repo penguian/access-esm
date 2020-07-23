@@ -1,7 +1,7 @@
 jobname: esm-pmip-lm
 queue: normal
 walltime: 3:10:00
-project: p66
+project: w35
 
 # note: if laboratory is relative path, it is relative to /scratch/$PROJECT/$USER
 laboratory: access-esm
