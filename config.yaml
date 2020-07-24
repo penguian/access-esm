@@ -15,6 +15,7 @@ submodels:
       input:
         - /g/data/access/payu/access-esm/input/pre-industrial/atmosphere
         - /g/data/access/payu/access-esm/input/pre-industrial/start_dump
+        - /g/data/access/payu/access-esm/input/pmip-lm/atmosphere
 
     - name: ocean
       model: mom
