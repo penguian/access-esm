@@ -1,7 +1,7 @@
-jobname: pre-industrial
+jobname: esm-pmip-lm
 queue: normal
 walltime: 3:10:00
-project: p66
+project: w35
 
 # note: if laboratory is relative path, it is relative to /scratch/$PROJECT/$USER
 laboratory: access-esm
@@ -11,15 +11,16 @@ submodels:
     - name: atmosphere
       model: um
       ncpus: 192
-      exe: /g/data/access/payu/access-esm/bin/coe/um7.3x
+      exe: /scratch/w35/hxw599/access-esm/pmip-lm/build/bin/um_hg3.exe
       input:
         - /g/data/access/payu/access-esm/input/pre-industrial/atmosphere
         - /g/data/access/payu/access-esm/input/pre-industrial/start_dump
+        - /g/data/access/payu/access-esm/input/pmip-lm/atmosphere
 
     - name: ocean
       model: mom
       ncpus: 180
-      exe: /g/data/access/payu/access-esm/bin/coe/mom5xx
+      exe: /g/data/access/payu/access-esm-pmip/pmip-mh/bin/mom5xx
       input:
         - /g/data/access/payu/access-esm/input/pre-industrial/ocean/common
         - /g/data/access/payu/access-esm/input/pre-industrial/ocean/pre-industrial
@@ -27,7 +28,7 @@ submodels:
     - name: ice
       model: cice
       ncpus: 12
-      exe: /g/data/access/payu/access-esm/bin/coe/cicexx
+      exe: /g/data/access/payu/access-esm-pmip/pmip-mh/bin/cicexx
       input:
         - /g/data/access/payu/access-esm/input/pre-industrial/ice
 
@@ -59,4 +60,4 @@ runspersub: 1
 
 stacksize: unlimited
 
-qsub_flags: -W umask=027
+qsub_flags: -W umask=027 -l storage=scratch/w35

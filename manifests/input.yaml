@@ -96,6 +96,16 @@ work/atmosphere/INPUT/STASHmaster/STASHsections_A:
   hashes:
     binhash: 6049f0c555b3c33d61bc3891f5a397c5
     md5: 8525fd107dbea6184db74089f1d55fd9
+work/atmosphere/INPUT/TSI_PMIP:
+  fullpath: /g/data/access/payu/access-esm/input/pmip-lm/atmosphere/TSI_PMIP
+  hashes:
+    binhash: 5d4e93e0bd26994df958547bc3e57c4c
+    md5: 9211fed3d5d76ac7cd86699f09617f60
+work/atmosphere/INPUT/VOLC_PMIP:
+  fullpath: /g/data/access/payu/access-esm/input/pmip-lm/atmosphere/VOLC_PMIP
+  hashes:
+    binhash: 04badb591f9484bb91a535b2ff841b37
+    md5: c2e58053cbb4f8772a05302cc9191bd2
 work/atmosphere/INPUT/biogenic_351sm.N96L38:
   fullpath: /g/data/access/payu/access-esm/input/pre-industrial/atmosphere/biogenic_351sm.N96L38
   hashes:
