@@ -4,8 +4,8 @@ version: 1.0
 work/atmosphere/um_hg3.exe:
   fullpath: /scratch/w35/hxw599/access-esm/pmip-lm/build/bin/um_hg3.exe
   hashes:
-    binhash: 43df7e161b7f2ab6a5dd9262798992c0
-    md5: 54bcb5d33e1d69dd8e807b97519de2d6
+    binhash: 65a236c29d86d65296b6dfe26e37e9d4
+    md5: 3339c11499e01f854612cf3772595a8d
 work/ice/cicexx:
   fullpath: /g/data/access/payu/access-esm-pmip/pmip-mh/bin/cicexx
   hashes:
