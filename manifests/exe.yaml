@@ -1,11 +1,11 @@
 format: yamanifest
 version: 1.0
 ---
-work/atmosphere/um_hg3.exe:
-  fullpath: /scratch/w35/hxw599/access-esm/pmip-lm/build/bin/um_hg3.exe
+work/atmosphere/um_hg3.exe-20200903:
+  fullpath: /scratch/w35/hxw599/access-esm/pmip-lm/build/bin/um_hg3.exe-20200903
   hashes:
-    binhash: 43df7e161b7f2ab6a5dd9262798992c0
-    md5: 54bcb5d33e1d69dd8e807b97519de2d6
+    binhash: 316f9503355d6a3630eab1961fd1fb53
+    md5: 3339c11499e01f854612cf3772595a8d
 work/ice/cicexx:
   fullpath: /g/data/access/payu/access-esm-pmip/pmip-mh/bin/cicexx
   hashes:
