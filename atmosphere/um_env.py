@@ -51,7 +51,6 @@ vars = {
 'VEGINIT': 'INPUT/cable_vegfunc_N96.anc',
 }
 
-import f90nml
 import mule
 
 # Current date according to the UM
