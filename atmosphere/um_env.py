@@ -50,3 +50,27 @@ vars = {
 'SULPEMIS': 'INPUT/scycl_1850_ESM1_v4.anc',
 'VEGINIT': 'INPUT/cable_vegfunc_N96.anc',
 }
+
+import f90nml
+import mule
+
+# Current date according to the UM
+mf = mule.load_umfile('work/atmosphere/restart_dump.astart')
+year = mf.fixed_length_header.t1_year
+
+print(f"Updating ozone for year {year}")
+
+if year <= 850:
+    ozone = 'ozone_esm_pmip_0850-0850.anc'
+elif year <= 1050:
+    ozone = 'ozone_esm_pmip_0851-1050.anc'
+elif year <= 1250:
+    ozone = 'ozone_esm_pmip_1051-1250.anc'
+elif year <= 1450:
+    ozone = 'ozone_esm_pmip_1251-1450.anc'
+elif year <= 1650:
+    ozone = 'ozone_esm_pmip_1451-1650.anc'
+elif year <= 1850:
+    ozone = 'ozone_esm_pmip_1651-1850.anc'
+
+vars['OZONE'] = 'INPUT/' + ozone
