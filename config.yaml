@@ -43,18 +43,21 @@ collate:
    restart: true
    mem: 4GB
 
-restart: /g/data/access/payu/access-esm/restart/pre-industrial
+restart: /g/data/access/payu/access-esm/restart/pmip-lm
 
 calendar:
     start:
-        year: 101
+        year: 850
         month: 1
         days: 1
 
     runtime:
-        years: 1
+        years: 1 # NOTE: Must be 1 year for land use updates
         months: 0
         days: 0
+
+userscripts:
+    run: ./update_landuse.py # Update land use after the run
 
 runspersub: 1
 
