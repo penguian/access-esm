@@ -55,7 +55,7 @@ import mule
 
 # Current date according to the UM
 mf = mule.load_umfile('work/atmosphere/restart_dump.astart')
-year = mf.fixed_length_header.t1_year
+year = mf.fixed_length_header.t2_year
 
 print(f"Updating ozone for year {year}")
 
