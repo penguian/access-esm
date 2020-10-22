@@ -20,7 +20,7 @@ import os
 import shutil
 from glob import glob
 
-landuse = xarray.open_dataset('atmosphere/INPUT/luh2_v2h_states_cable_N96.nc').cable_fraction
+landuse = xarray.open_dataset('work/atmosphere/INPUT/luh2_v2h_states_cable_N96.nc').cable_fraction
 
 class ReplaceOp(mule.DataOperator):
     def __init__(self, da):
