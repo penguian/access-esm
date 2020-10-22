@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/coecms/esm-pre-industrial.svg?branch=master)](https://travis-ci.org/coecms/esm-pre-industrial)
+[![Build Status](https://travis-ci.org/coecms/esm-esm-pmip-lm.svg?branch=master)](https://travis-ci.org/coecms/esm-esm-pmip-lm)
 
 # ACCESS-ESM with **payu**
 
@@ -7,15 +7,19 @@
 
 Get payu:
 
-    module use /g/data3/hh5/public/modules
+    module use /g/data/hh5/public/modules
     module load conda/analysis3-unstable
 
 Create a directory in which to keep the model configurations:
 
     mkdir -p ~/access-esm
     cd ~/access-esm
-    git clone https://github.com/coecms/esm-pre-industrial
-    cd esm-pre-industrial
+    git clone https://github.com/coecms/esm-esm-pmip-lm
+    cd esm-esm-pmip-lm
+
+Update the ancillary files
+
+    ./warm-start.sh
 
 Run the model:
 
@@ -49,7 +53,7 @@ This will not be part of this document.
 To understand **payu**, it helps to distinguish certain terms:
 
 -   The **laboratory** is a directory where all parts of the model are kept.
-    It is typically in the user's short directory, usually at `/short/$PROJECT/$USER/<MODEL>`
+    It is typically in the user's scratch directory, usually at `/scratch/$PROJECT/$USER/<MODEL>`
 -   The **Control Directory** is the directory where the model configuration is
     kept and from where the model is run.
 -   The **work** directory is where the model will actually be run.
@@ -90,8 +94,8 @@ The ESM 1.5 subversion of ACCESS specifically contains these models:
 | Land       | CABLE      | 2.2.4   |
 | Coupler    | OASIS-MCT  | 3.5     |
 
-~~Pre-compiled executables for these models are available on raijin at
-`/short/public/access-esm/payu/bin/csiro/`.~~
+~~Pre-compiled executables for these models are available on gadi at
+`/scratch/public/access-esm/payu/bin/csiro/`.~~
 
 ## Setting up ACCESS-ESM with **payu**
 
@@ -100,7 +104,7 @@ The ESM 1.5 subversion of ACCESS specifically contains these models:
 On `gadi`, first make sure that you have access to our modules.
 This can most easily been done by adding the line
 
-    module use /g/data3/hh5/public/modules
+    module use /g/data/hh5/public/modules
 
 to your `~/.profile`, then logging back in. Then all you have to do is
 
@@ -120,10 +124,10 @@ Create a directory in your home directory to keep all the Control Directories yo
 
 Then clone the most recent version of the ACCESS-ESM control directory:
 
-    git clone https://github.com/coecms/esm-pre-industrial
-    cd esm-pre-industrial
+    git clone https://github.com/coecms/esm-esm-pmip-lm
+    cd esm-esm-pmip-lm
 
-(Note: Currently we only have the pre-industrial model set up, other versions will follow later.)
+(Note: Currently we only have the esm-pmip-lm model set up, other versions will follow later.)
 
 ### Setting up the Master Configuration file.
 
@@ -131,52 +135,56 @@ Open the `config.yaml` file with your preferred text editor.
 
 Let's have a closer look at the parts:
 
-    jobname: pre-industrial
+    jobname: esm-pmip-lm
     queue: normal
     walltime: 20:00:00
 
 These are settings for the PBS system. Name, walltime and queue to use.
 
-    # note: if laboratory is relative path, it is relative to /short/$PROJECT/$USER
+    # note: if laboratory is relative path, it is relative to /scratch/$PROJECT/$USER
     laboratory: access-esm
 
-The location of the laboratory. At this point, **payu** can not expand shell environment variables (it's in our TO-DO), so as a work-around, if you use relative paths, it will be relative to your default short directory.
+The location of the laboratory. At this point, **payu** can not expand shell environment variables (it's in our TO-DO), so as a work-around, if you use relative paths, it will be relative to your default scratch directory.
 
-In this default configuration, it will be in `/short/$PROJECT/$USER/access-esm`.
+In this default configuration, it will be in `/scratch/$PROJECT/$USER/access-esm`.
 But you can also hard-code the full path, if you want it somewhere different.
 
     model: access
 
 The main model. This mainly tells **payu** which driver to use. **payu** knows that **access** is a coupled model, so it will look for separate configurations of the submodels, which is the next item of the configuration file:
 
+
     submodels:
         - name: atmosphere
           model: um
           ncpus: 192
-          exe: /short/public/access-esm/payu/bin/csiro/um_hg3.exe-20190129_15
+          exe: /scratch/w35/hxw599/access-esm/pmip-lm/build/bin/um_hg3.exe-20200903
           input:
-            - /short/public/access-esm/payu/input/pre-industrial/atmosphere
+            - /g/data/access/payu/access-esm/input/esm-pmip-lm/atmosphere
+            - /g/data/access/payu/access-esm/input/esm-pmip-lm/start_dump
+            - /g/data/access/payu/access-esm/input/pmip-lm/atmosphere
 
         - name: ocean
           model: mom
-          ncpus: 84
-          exe: /short/public/access-esm/payu/bin/coe/fms_ACCESS-CM.x
+          ncpus: 180
+          exe: /g/data/access/payu/access-esm-pmip/pmip-mh/bin/mom5xx
           input:
-            - /short/public/access-esm/payu/input/common/ocean
-            - /short/public/access-esm/payu/input/pre-industrial/ocean
+            - /g/data/access/payu/access-esm/input/esm-pmip-lm/ocean/common
+            - /g/data/access/payu/access-esm/input/esm-pmip-lm/ocean/esm-pmip-lm
 
         - name: ice
           model: cice
           ncpus: 12
-          exe: /short/public/access-esm/payu/bin/csiro/cice4.1_access-mct-12p-20180108
+          exe: /g/data/access/payu/access-esm-pmip/pmip-mh/bin/cicexx
           input:
-            - /short/public/access-esm/payu/input/common/ice
+            - /g/data/access/payu/access-esm/input/esm-pmip-lm/ice
 
         - name: coupler
           model: oasis
           ncpus: 0
           input:
-            - /short/public/access-esm/payu/input/common/coupler
+            - /g/data/access/payu/access-esm/input/esm-pmip-lm/coupler
+
 
 This is probably the meatiest part of the configuration, so let's look at it in more detail.
 
@@ -191,7 +199,7 @@ The **name** is more than a useful reminder of what the model is.
 **payu** expects this submodel's configuration files in a subdirectory with that name.
 
     collate:
-       exe: /short/public/access-esm/payu/bin/mppnccombine
+       exe: /scratch/public/access-esm/payu/bin/mppnccombine
        restart: true
        mem: 4GB
 
@@ -202,7 +210,7 @@ the `restart: true` option means the restart files from the **previous** run are
 collated. This saves space and cuts down the number of files which makes more efficient
 use of storage and better for archiving in the future.
 
-    restart: /short/public/access-esm/payu/restart/pre-industrial
+    restart: /scratch/public/access-esm/payu/restart/esm-pmip-lm
 
 This is the location of the warm restart files.
 **payu** will use the restart files in there for the initial run.
@@ -263,7 +271,13 @@ of CICE will be in the `ice` subdirectory.
 
 ## Running the Model
 
-If you have set up the modules system to use the `/g/data3/hh5/public/modules` folder, a simple `module load conda/analysis3-unstable` should give you access to the **payu** system.
+At the moment, you need to collect the ancillary files from the Pre-Industrial experiment and change the basis time in those files.
+That is done with the command:
+
+    ./warm-start.sh
+
+
+If you have set up the modules system to use the `/g/data/hh5/public/modules` folder, a simple `module load conda/analysis3-unstable` should give you access to the **payu** system.
 
 From the control directory, type
 
