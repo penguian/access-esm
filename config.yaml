@@ -62,4 +62,4 @@ runspersub: 1
 
 stacksize: unlimited
 
-qsub_flags: -W umask=027 -l storage=scratch/w35
+qsub_flags: -W umask=027 -l storage=scratch/w35 -l jobfs=100gb
