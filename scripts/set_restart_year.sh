@@ -48,6 +48,10 @@ EOF
 # Update atmos start time
 python scripts/update_um_year.py $start_year $payu_restart/atmosphere/restart_dump.astart 2> /dev/null
 
+cat > $payu_restart/atmosphere/um.res.yaml << EOF
+end_date: $(printf %04d $start_year)-01-01 00:00:00
+EOF
+
 # Update ice start time
 cat > $payu_restart/ice/cice_in.nml << EOF
 &setup_nml
