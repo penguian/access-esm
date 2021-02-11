@@ -19,11 +19,16 @@ import xarray
 import os
 import shutil
 from glob import glob
+import numpy
 
-landuse = xarray.open_dataset('work/atmosphere/INPUT/luh2_v2h_states_cable_N96.nc').cable_fraction
+#landuse = xarray.open_dataset('work/atmosphere/INPUT/luh2_v2h_states_cable_N96.nc').cable_fraction
+landuse = xarray.open_dataset('notebooks/luh2_v2h_states_cable_N96_v2.nc').cable_fraction
 
 def normalise(da):
+    #da = (numpy.clip(da, 0, 1)).round(decimals=3)
+    #da[0,:,:] += numpy.where(da[3:,:,:].sum('cable_type') == 0, 0.5, 0)
     return da / da.sum('cable_type')
+    #return da
 
 class ReplaceOp(mule.DataOperator):
     def __init__(self, da):
@@ -36,24 +41,31 @@ class ReplaceOp(mule.DataOperator):
         return self.da.isel(cable_type = source.lbuser5 - 1).data
 
 # The last restart of the run
-restart = sorted(glob('work/atmosphere/aiihca.da*'))[-1]
-#restart = 'work/atmosphere/restart_dump.astart'
+#restart = sorted(glob('work/atmosphere/aiihca.da*'))[-1]
+restart = 'work/atmosphere/restart_dump.astart'
 
 stash_landfrac = 216
 stash_landfrac_lastyear = 835
 
 mf = mule.DumpFile.from_file(restart)
 
-year = mf.fixed_length_header.t1_year
-#year = 850
+year = mf.fixed_length_header.t2_year
+year = 1850
 
-print(f'Updating land use for year {year}')
+print(f'Updating land use for year {year} in {restart}')
 
 out = mf.copy()
 out.validate = lambda *args, **kwargs: True
 
-set_current_landuse = ReplaceOp(landuse.sel(time=year))
-set_previous_landuse = ReplaceOp(landuse.sel(time=year-1, method='nearest'))
+i = 3
+lu = landuse.sel(time=year)
+#lu2 = landuse.sel(time=year+1)
+
+#lu[1,:,:] = lu[1,:,:] * 1.1
+
+#set_current_landuse = ReplaceOp(landuse.sel(time=year))
+set_current_landuse = ReplaceOp(lu)
+# set_previous_landuse = ReplaceOp(landuse.sel(time=year+1, method='nearest'))
 set_previous_landuse = set_current_landuse
 
 for f in mf.fields:
