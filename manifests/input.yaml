@@ -371,6 +371,11 @@ work/ocean/INPUT/grid_spec.nc:
   hashes:
     binhash: 24c438668010498f4c85736ff1f42920
     md5: b9adc1e552201aa3abc6efb72786ec93
+work/ocean/INPUT/ideal_runoff.nc:
+  fullpath: /g/data/ob22/yd3797/access-esm/input/ideal_runoff.nc
+  hashes:
+    binhash: 67cd29b7053ba6e65c95c939a81144a9
+    md5: b379d76f663c2b923f4f6c9b2255fa0a
 work/ocean/INPUT/ocmip2_abiotic_c14_atm_hist_om3_bc-1-9999.nc:
   fullpath: /g/data/access/payu/access-esm/input/pre-industrial/ocean/pre-industrial/ocmip2_abiotic_c14_atm_hist_om3_bc-1-9999.nc
   hashes:

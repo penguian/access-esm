@@ -295,7 +295,6 @@
 
  &ocean_overexchange_nml
       use_this_module=.false.
-      debug_this_module=.false.
       overexch_npts=4
       overexch_weight_far=.false.
       overflow_umax=5.0
@@ -334,6 +333,9 @@
 /
 
  &ocean_sbc_nml
+      use_ideal_runoff=.true.
+      runoffspread=.false.
+      calvingspread=.false.
       use_waterflux=.true.
       temp_restore_tscale=-1.0
       salt_restore_tscale=-1.0

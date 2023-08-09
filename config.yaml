@@ -20,6 +20,7 @@ submodels:
       ncpus: 180
       exe: /g/data/access/payu/access-esm-pmip/pmip-mh/bin/mom5xx
       input:
+        - /g/data/ob22/yd3797/access-esm/input
         - /g/data/access/payu/access-esm/input/pre-industrial/ocean/common
         - /g/data/access/payu/access-esm/input/pre-industrial/ocean/pre-industrial
 
