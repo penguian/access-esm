@@ -1,10 +1,10 @@
 format: yamanifest
 version: 1.0
 ---
-work/atmosphere/um_hg3.exe-r795-20230808:
-  fullpath: /g/data/access/payu/access-esm/bin/coe/8.2ka/um_hg3.exe-r795-20230808
+work/atmosphere/um_hg3.exe:
+  fullpath: /g/data/access/payu/access-esm/bin/coe/8.2ka/um_hg3.exe
   hashes:
-    binhash: 82b24f534a48406d9576a348130f5092
+    binhash: 83cb92f8418aab4e97eabb4e97be99cd
     md5: cacc32b72d0bf930729e61c67cc1195b
 work/ice/cicexx:
   fullpath: /g/data/access/payu/access-esm-pmip/pmip-mh/bin/cicexx
