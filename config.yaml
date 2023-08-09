@@ -3,7 +3,7 @@ queue: normal
 walltime: 3:10:00
 
 # note: if laboratory is relative path, it is relative to /scratch/$PROJECT/$USER
-laboratory: /g/data/ob22/yd3797/access-esm/
+laboratory: /g/data/ob22/yd3797/access-esm-work/
 model: access
 
 submodels:
