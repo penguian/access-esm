@@ -1,4 +1,5 @@
 # ACCESS-ESM with **payu**
+This configuration is for the PMIP Last-Interglacial experiment
 
 ## Quickstart Guide
 
@@ -12,8 +13,9 @@ Create a directory in which to keep the model configurations:
 
     mkdir -p ~/access-esm
     cd ~/access-esm
-    git clone https://github.com/coecms/esm-lig
-    cd esm-lig
+    git clone https://github.com/coecms/access-esm
+    cd access-esm
+    git checkout last-interglacial
 
 Create a branch to collect all the run configurations in
 
