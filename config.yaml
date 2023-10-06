@@ -4,6 +4,7 @@ walltime: 1:40:00
 
 # note: if laboratory is relative path, it is relative to /scratch/$PROJECT/$USER
 laboratory: access-esm
+experiment: SSP585
 model: access
 
 submodels:
