@@ -1,6 +1,16 @@
 format: yamanifest
 version: 1.0
 ---
+work/atmosphere/um_hg3.exe:
+  fullpath: /g/data/tm70/pcl851/src/penguian/access-esm-build-gadi/bin/um_hg3.exe
+  hashes:
+    binhash: c79ee0def766fab85a277861227ccbde
+    md5: f3d161e426b094471a2c17784b8cc3cb
+work/ice/cice4.1_access-mct-12p-20240124:
+  fullpath: /g/data/tm70/pcl851/src/penguian/access-esm-build-gadi/bin/cice4.1_access-mct-12p-20240124
+  hashes:
+    binhash: 05afeb1799ac5ec7a5716dd455aa9a20
+    md5: 7b650d523af4a19ed37ab24c85369d7f
 work/ocean/mom5xx:
   fullpath: /g/data/tm70/pcl851/src/penguian/access-esm-build-gadi/bin/mom5xx
   hashes:
