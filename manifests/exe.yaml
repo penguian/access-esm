@@ -4,8 +4,8 @@ version: 1.0
 work/atmosphere/um_hg3.exe:
   fullpath: /g/data/tm70/pcl851/src/penguian/access-esm-build-gadi/bin/um_hg3.exe
   hashes:
-    binhash: 19bdbaa5e05c6248b2b894507cbe15af
-    md5: e4b34c5a842778b06c43fc3fdfe10792
+    binhash: a3c892a5696c1afca4fe07f70100ab65
+    md5: 462a216944cbd1201b59e34f57f5c8e5
 work/ice/cice4.1_access-mct-12p-20240205:
   fullpath: /g/data/tm70/pcl851/src/penguian/access-esm-build-gadi/bin/cice4.1_access-mct-12p-20240205
   hashes:
