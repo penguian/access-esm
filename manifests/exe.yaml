@@ -4,15 +4,15 @@ version: 1.0
 work/atmosphere/um_hg3.exe:
   fullpath: /g/data/tm70/pcl851/src/penguian/access-esm-build-gadi/bin/um_hg3.exe
   hashes:
-    binhash: a3c892a5696c1afca4fe07f70100ab65
-    md5: 462a216944cbd1201b59e34f57f5c8e5
-work/ice/cice4.1_access-mct-12p-20240205:
-  fullpath: /g/data/tm70/pcl851/src/penguian/access-esm-build-gadi/bin/cice4.1_access-mct-12p-20240205
+    binhash: 909bf2b2fee690a7d89713562cad20d7
+    md5: 8fe7781998089ab6cbfffce2228896c6
+work/ice/cice4.1_access-mct-12p-20240221:
+  fullpath: /g/data/tm70/pcl851/src/penguian/access-esm-build-gadi/bin/cice4.1_access-mct-12p-20240221
   hashes:
-    binhash: 12f730720b062d4a7c07fecf4fdd5320
-    md5: d3144e7db334e7cb67d1e840da66426d
+    binhash: 955306d58782074763804a64cafefb48
+    md5: d8a6bf15993a382df8a276177688cc00
 work/ocean/mom5xx:
   fullpath: /g/data/tm70/pcl851/src/penguian/access-esm-build-gadi/bin/mom5xx
   hashes:
-    binhash: b0b7746cebf68defd82861b2a20e0b63
-    md5: ddd0a999bfe46076514a66e9fbc04b02
+    binhash: c32594b50299c5bae144b76260e61971
+    md5: a748083a421b7ee1d0173563d7855fc8

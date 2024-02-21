@@ -25,7 +25,7 @@ submodels:
     - name: ice
       model: cice
       ncpus: 12
-      exe: /g/data/tm70/pcl851/src/penguian/access-esm-build-gadi/bin/cice4.1_access-mct-12p-20240205
+      exe: /g/data/tm70/pcl851/src/penguian/access-esm-build-gadi/bin/cice4.1_access-mct-12p-20240221
       input:
         - /g/data/access/payu/access-esm/input/pre-industrial/ice
 
