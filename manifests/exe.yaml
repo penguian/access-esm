@@ -1,11 +1,11 @@
 format: yamanifest
 version: 1.0
 ---
-work/atmosphere/um_hg3.exe:
-  fullpath: /g/data/tm70/pcl851/src/MartinDix/ESM1.5/ummodel_hg3/bin/um_hg3.exe
+work/atmosphere/um_hg3.exe-20240304:
+  fullpath: /g/data/tm70/pcl851/src/penguian/access-esm-build-gadi/bin/um_hg3.exe-20240304
   hashes:
-    binhash: abf9953689c60c83ea2c0236c487f28a
-    md5: 469f3edc905b73d13578dcdf8f13f1b5
+    binhash: 73943304e866ea8762c1f99d1c07fee6
+    md5: 7611884b2dadd15e9c45921472daa493
 work/ice/cicexx:
   fullpath: /g/data/access/payu/access-esm/bin/coe/cicexx
   hashes:
