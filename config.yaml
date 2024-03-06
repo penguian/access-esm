@@ -1,6 +1,6 @@
 jobname: pre-industrial
 queue: normal
-walltime: 3:10:00
+walltime: 2:00:00
 
 # note: if laboratory is relative path, it is relative to /scratch/$PROJECT/$USER
 laboratory: access-esm
@@ -10,8 +10,7 @@ submodels:
     - name: atmosphere
       model: um
       ncpus: 192
-      exe: /g/data/tm70/pcl851/src/penguian/access-esm-build-gadi/bin/um_hg3.exe-20240305
-      # exe: /g/data/tm70/pcl851/src/MartinDix/ESM1.5/ummodel_hg3/bin/um_hg3.exe
+      exe: /g/data/tm70/pcl851/src/penguian/access-esm-build-gadi/bin/um_hg3.exe-20240306
       input:
         - /g/data/access/payu/access-esm/input/pre-industrial/atmosphere
 
